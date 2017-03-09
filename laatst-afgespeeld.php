@@ -34,13 +34,12 @@ if (isset($_SESSION['token'])) {
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-    <a href="">
         <?php
-        $tracks = $api->getMyRecentTracks(array('limit' => 16));
+        $tracks = $api->getMyRecentTracks(array('limit' => 14));
 
         foreach ($tracks->items as $item) {
             ?>
-            <a href="#">
+            <a href="<?php echo $item->track->external_urls->spotify; ?>">
                 <div class="optionsKlein optionKlein">
                     <p id="options"><?php echo $item->track->name; ?></p>
                 </div>
@@ -48,7 +47,16 @@ if (isset($_SESSION['token'])) {
             <?php
             }
             ?>
-    </a>
+        <a href="index.php">
+            <div class="optionsKlein optionKlein">
+                <p id="options">Terug</p>
+            </div>
+        </a>
+        <a href="index.php">
+            <div class="optionsKlein optionKlein">
+                <p id="options">Home</p>
+            </div>
+        </a>
 
     </body>
     </html>
