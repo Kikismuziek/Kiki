@@ -36,11 +36,15 @@ if (isset($_SESSION['token'])) {
     <body>
     <a href="">
         <?php
-        $tracks = $api->getMyRecentTracks(array('limit' => 40));
+        $tracks = $api->getMyRecentTracks(array('limit' => 14));
 
         foreach ($tracks->items as $item) {
-            echo $item->track->artists[0]->name . ' - ';
-            echo $item->track->name . '<br>';
+            echo
+            "<a href='#'>
+            <div class='optionsKlein optionKlein'>
+                <p id='options'> . $item->track->name . </p>
+            </div>
+        </a>";
         }
         ?>
     </a>
