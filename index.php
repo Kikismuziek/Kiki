@@ -25,17 +25,23 @@ if (isset($_SESSION['token'])) {
     <html>
     <head>
         <meta charset="utf-8">
-
+        <link href="style.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
-    <?php
-    $tracks = $api->getMyRecentTracks(array('limit' => 40));
-
-    foreach ($tracks->items as $item) {
-        echo $item->track->artists[0]->name . ' - ';
-        echo $item->track->name . '<br>';
-    }
-    ?>
+    <div class="container">
+        <div class="options option1">
+            <p id="options">Laatst afgespeeld</p>
+        </div>
+        <div class="options option2">
+            <p id="options">Favorieten lijst</p>
+        </div>
+        <div class="options option3">
+            <p id="options">Artiesten</p>
+        </div>
+        <div class="options option4">
+            <p id="options">Nieuwe muziek</p>
+        </div>
+    </div>
     </body>
     </html>
 
