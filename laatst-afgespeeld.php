@@ -31,22 +31,23 @@ if (isset($_SESSION['token'])) {
     <html>
     <head>
         <meta charset="utf-8">
-
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
     <a href="">
         <?php
-        $tracks = $api->getMyRecentTracks(array('limit' => 14));
+        $tracks = $api->getMyRecentTracks(array('limit' => 16));
 
         foreach ($tracks->items as $item) {
-            echo
-            "<a href='#'>
-            <div class='optionsKlein optionKlein'>
-                <p id='options'> . $item->track->name . </p>
-            </div>
-        </a>";
-        }
-        ?>
+            ?>
+            <a href="#">
+                <div class="optionsKlein optionKlein">
+                    <p id="options"><?php echo $item->track->name; ?></p>
+                </div>
+            </a>
+            <?php
+            }
+            ?>
     </a>
 
     </body>
