@@ -35,29 +35,25 @@ if (isset($_SESSION['token'])) {
     </head>
     <body>
     <?php
-    $playlist = $api->getUserPlaylist('spotify_netherlands', '1EnTBEgCWiTX2YHyAzkcFn');
-    $playlist2 = $api->getUserPlaylist('spotifycharts', '37i9dQZEVXbKCF6dqVpDkS')
+    $tracks = $api->getUserPlaylistTracks('spotify_netherlands', '1EnTBEgCWiTX2YHyAzkcFn', array('limit' => 14));
 
+    foreach ($tracks->items as $item) {
         ?>
-        <a href="New-Music-Friday-NL.php">
-            <div class="options option">
-                <p id="options"><?php echo $playlist->name ?></p>
-            </div>
-        </a>
-        <a href="">
-            <div class="options option">
-                <p id="options"><?php echo $playlist2->name ?></p>
+        <a href="<?php echo $item->track->external_urls->spotify; ?>">
+            <div class="optionsKlein optionKlein">
+                <p id="options"><?php echo $item->track->name; ?></p>
             </div>
         </a>
         <?php
+    }
     ?>
     <a href="index.php">
-        <div class="options option">
+        <div class="optionsKlein optionKlein">
             <p id="options">Terug</p>
         </div>
     </a>
     <a href="index.php">
-        <div class="options option">
+        <div class="optionsKlein optionKlein">
             <p id="options">Home</p>
         </div>
     </a>
