@@ -1,5 +1,5 @@
 {
-    "name": "jwilsson/spotify-web-api-php",
+    "name": "jwilsson/spotify-web-api-php1",
     "description": "A PHP wrapper for Spotify's Web API.",
     "type": "library",
     "license": "MIT",
