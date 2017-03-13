@@ -14,7 +14,8 @@ if (isset($_GET['code'])) {
         'scope' => [
             'playlist-read-private',
             'user-read-private',
-            'user-read-recently-played'
+            'user-read-recently-played',
+            'user-top-read'
         ],
     ];
     header('Location: ' . $session->getAuthorizeUrl($scopes));

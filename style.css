@@ -49,3 +49,22 @@ body {
     position: relative;
     font-size: 1.3em;
 }
+
+.optionsMiddel {
+    float: left;
+    width: 31vw;
+    height: 13vw;
+    margin: 1vw;
+    text-align: center;
+    border: 1px solid black;
+    background-color: red;
+    box-sizing: border-box;
+    color: white;
+    vertical-align: middle;
+}
+
+#optionsMiddel {
+    top: 40%;
+    position: relative;
+    font-size: 1.3em;
+}

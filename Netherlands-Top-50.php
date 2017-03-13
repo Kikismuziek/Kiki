@@ -35,34 +35,27 @@ if (isset($_SESSION['token'])) {
     </head>
     <body>
     <?php
-    $playlist = $api->getUserPlaylist('spotify_netherlands', '1EnTBEgCWiTX2YHyAzkcFn');
-    $playlist2 = $api->getUserPlaylist('spotifycharts', '37i9dQZEVXbKCF6dqVpDkS');
-    $playlist3 = $api->getUserPlaylist('spotifycharts', '37i9dQZEVXbMQaPQjt027d');
+    $tracks = $api->getUserPlaylistTracks('spotifycharts', '37i9dQZEVXbKCF6dqVpDkS', array('limit' => 14));
 
+    foreach ($tracks->items as $item) {
         ?>
-        <a href="New-Music-Friday-NL.php">
-            <div class="options option">
-                <p id="options"><?php echo $playlist->name ?></p>
-            </div>
-        </a>
-        <a href="Netherlands-Top-50.php">
-            <div class="options option">
-                <p id="options"><?php echo $playlist2->name ?></p>
-            </div>
-        </a>
-        <a href="Netherlands-Viral-50.php">
-            <div class="options option">
-                <p id="options"><?php echo $playlist3->name ?></p>
+        <a href="nummer.php?id=<?php echo $item->track->id ?>">
+            <div class="optionsKlein optionKlein">
+                <p id="options"><?php echo $item->track->name; ?></p>
             </div>
         </a>
         <?php
-
+    }
     ?>
     <a href="index.php">
-        <div class="options option">
+        <div class="optionsKlein optionKlein">
             <p id="options">Terug</p>
         </div>
     </a>
+    <a href="index.php">
+        <div class="optionsKlein optionKlein">
+            <p id="options">Home</p>
+        </div>
     </a>
 
     </body>
