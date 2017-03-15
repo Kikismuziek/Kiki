@@ -45,6 +45,14 @@ a:hover{
     padding-top: 30px;
 }
 
+.options.optionBackHome.optionsSmall {
+    padding-top: 20px;
+}
+
+.optionsSmall{
+    height: 100px;
+}
+
 .optionBackHome{
     background-color: #376b9a;
     color: #e7ea83;
@@ -55,12 +63,22 @@ a:hover{
     font-weight: bold;
 }
 
+#optionSmall{
+    font-size: 2em;
+    font-weight: 300;
+}
+
 #optionsNoIcon{
     position: relative;
     top: 20%;
 }
+
 .glyphicon{
     font-size: 60px;
+}
+
+.optionsSmall .glyphicon{
+    font-size: 30px;
 }
 /*.icon{*/
     /*width: 75px;*/

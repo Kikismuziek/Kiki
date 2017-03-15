@@ -51,8 +51,9 @@ if (isset($_SESSION['token'])) {
         ?>
         <div class="col-md-3">
             <a href="<?php echo $item->track->external_urls->spotify; ?>">
-                <div class="options option">
-                    <p id="options"><?php echo $item->track->name; ?></p>
+                <div class="options option optionsSmall" data-text="<?php echo $item->track->name; ?>">
+                    <p id="optionSmall"><?php echo mb_strimwidth($item->track->name, 0, 15, '...'); ?></p>
+
                 </div>
             </a>
         </div>
@@ -62,17 +63,17 @@ if (isset($_SESSION['token'])) {
 
         <div class="col-md-3">
             <a href="index.php">
-                <div class="options optionBackHome">
+                <div class="options optionBackHome optionsSmall">
                     <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-                    <p id="options">Terug</p>
+                    <p id="optionSmall">Terug</p>
                 </div>
             </a>
         </div>
         <div class="col-md-3">
             <a href="index.php">
-                <div class="options optionBackHome">
+                <div class="options optionBackHome optionsSmall">
                     <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                    <p id="options">Home</p>
+                    <p id="optionSmall">Home</p>
                 </div>
             </a>
         </div>
