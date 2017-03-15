@@ -25,15 +25,11 @@ if (isset($_GET['id'])) {
     </div>
 </a>
 
-<a href="#" onclick="function () {
-        $api->addMyTracks([
-        '<?php echo $id ?>'
-        ]);
-        }">
+<a href="#">
     <div class="optionsKlein optionsKlein">
         <p id="options">Voeg toe aan favorieten</p>
     </div>
-</>
+</a>
 
 <a href="index.php">
     <div class="optionsKlein optionsKlein">
