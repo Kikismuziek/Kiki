@@ -26,33 +26,57 @@ if (isset($_SESSION['token'])) {
     <head>
         <meta charset="utf-8">
         <link href="style.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
     <body>
-    <div class="title">
-        <h1>Welkom Kiki!</h1>
+    <div class="container">
+        <img class="logo pull-right" src="img/Logo.png" alt="">
     </div>
     <div class="container">
-        <a href="laatst-afgespeeld.php">
-            <div class="options option1">
-                <p id="options">Onlangs afgespeeld</p>
-            </div>
-        </a>
-        <a href="favorieten.php">
-            <div class="options option2">
-                <p id="options">Favorietenlijst</p>
-            </div>
-        </a>
-        <a href="artiesten.php">
-            <div class="options option3">
-                <p id="options">Artiesten</p>
-            </div>
-        </a>
-        <a href="nieuwe-muziek.php">
-            <div class="options option4">
-                <p id="options">Nieuwe muziek</p>
-            </div>
-        </a>
+        <h1 id="welcome">Welkom Kiki!</h1>
+        <div class="col-md-6">
+            <a href="laatst-afgespeeld.php">
+                <div class="options option1">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+<!--                    <img class="icon" src="img/002-replay.png" alt="">-->
+                    <p id="options">Onlangs afgespeeld</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="favorieten.php">
+                <div class="options option2">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+<!--                    <img class="icon" src="img/005-star.png" alt="">-->
+                    <p id="options">Favorietenlijst</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-6">
+            <a href="artiesten.php">
+                <div class="options option3">
+                    <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+<!--                    <img id="elvis" class="icon" src="img/Poppetje.png" alt="">-->
+                    <p id="options">Artiesten</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-6">
+            <a href="nieuwe-muziek.php">
+                <div class="options option4">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+<!--                    <img class="icon" src="img/Zoek.png" alt="">-->
+                    <p id="options">Nieuwe muziek</p>
+                </div>
+            </a>
+        </div>
+
     </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
     </body>
     </html>
 

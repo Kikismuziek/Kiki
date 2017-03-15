@@ -3,8 +3,19 @@
     padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
 body {
-    background-color: #7eaddc;
+    background-color: #7eaddc !important;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+a:hover{
+    text-decoration: none !important;
 }
 
 .container {
@@ -12,30 +23,42 @@ body {
     width: 100vw;
 }
 
-.title {
+.logo{
+    width: 150px;
+}
+
+#welcome{
+    font-size: 60px;
     color: #e7ea83;
-    font-size: 1.7em;
+    font-weight: 600;
+    margin-left: 25px;
 }
 
 .options {
-    float: left;
-    width: 22vw;
     height: 13vw;
-    margin: 1vw;
+    margin: 10px;
     text-align: center;
-    border: 1px solid black;
     background-color: #e7ea83;
     box-sizing: border-box;
     color: #d1232a;
     vertical-align: middle;
+    padding-top: 30px;
 }
 
 #options {
-    top: 40%;
-    position: relative;
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: bold;
 }
+.glyphicon{
+    font-size: 60px;
+}
+/*.icon{*/
+    /*width: 75px;*/
+/*}*/
+
+/*#elvis{*/
+    /*width: 60px;*/
+/*}*/
 
 .optionsKlein {
     float: left;
@@ -74,3 +97,4 @@ body {
     position: relative;
     font-size: 1.3em;
 }
+
