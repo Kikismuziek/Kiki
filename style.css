@@ -27,7 +27,7 @@ a:hover{
     width: 150px;
 }
 
-#welcome{
+.bigTitle{
     font-size: 60px;
     color: #e7ea83;
     font-weight: 600;
@@ -45,9 +45,19 @@ a:hover{
     padding-top: 30px;
 }
 
-#options {
+.optionBackHome{
+    background-color: #376b9a;
+    color: #e7ea83;
+}
+
+#options, #optionsNoIcon {
     font-size: 2.5em;
     font-weight: bold;
+}
+
+#optionsNoIcon{
+    position: relative;
+    top: 20%;
 }
 .glyphicon{
     font-size: 60px;

@@ -32,6 +32,7 @@ if (isset($_SESSION['token'])) {
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
     <body>
     <?php
@@ -40,31 +41,44 @@ if (isset($_SESSION['token'])) {
     $playlist3 = $api->getUserPlaylist('spotifycharts', '37i9dQZEVXbMQaPQjt027d');
 
         ?>
-        <a href="New-Music-Friday-NL.php">
-            <div class="options option">
-                <p id="options"><?php echo $playlist->name ?></p>
-            </div>
-        </a>
-        <a href="Netherlands-Top-50.php">
-            <div class="options option">
-                <p id="options"><?php echo $playlist2->name ?></p>
-            </div>
-        </a>
-        <a href="Netherlands-Viral-50.php">
-            <div class="options option">
-                <p id="options"><?php echo $playlist3->name ?></p>
-            </div>
-        </a>
-        <?php
-
-    ?>
-    <a href="index.php">
-        <div class="options option">
-            <p id="options">Terug</p>
+    <div class="container">
+        <img class="logo pull-right" src="img/Logo.png" alt="">
+    </div>
+    <div class="container">
+        <h1 class="bigTitle">Nieuwe Muziek</h1>
+        <div class="col-md-6">
+            <a href="New-Music-Friday-NL.php">
+                <div class="options option">
+                    <p id="optionsNoIcon"><?php echo $playlist->name ?></p>
+                </div>
+            </a>
         </div>
-    </a>
-    </a>
+        <div class="col-md-6">
+            <a href="Netherlands-Top-50.php">
+                <div class="options option">
+                    <p id="optionsNoIcon"><?php echo $playlist2->name ?></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="Netherlands-Viral-50.php">
+                <div class="options option">
+                    <p id="optionsNoIcon"><?php echo $playlist3->name ?></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="index.php">
+                <div class="options optionBackHome">
+                    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                    <p id="options">Terug</p>
+                </div>
+            </a>
+        </div>
+    </div>
 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
     </body>
     </html>
 
