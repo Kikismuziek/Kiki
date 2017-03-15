@@ -40,6 +40,7 @@ if (isset($_SESSION['token'])) {
     </div>
     <div class="container">
     <?php
+    $count = 0;
     $tracks = $api->getUserPlaylistTracks('spotifycharts', '37i9dQZEVXbKCF6dqVpDkS', array('limit' => 14));
     $playlist = $api->getUserPlaylist('spotifycharts', '37i9dQZEVXbKCF6dqVpDkS');
     ?>
@@ -48,7 +49,8 @@ if (isset($_SESSION['token'])) {
 
     <?php
     foreach(array_chunk($tracks->items, 4, true) as $array){
-        echo "<div class='wrapper'>";
+        $count++;
+        echo "<div class='wrapper' data-wrapperid='$count'>";
         foreach ($array as $item) {
             ?>
             <div class="col-md-3">

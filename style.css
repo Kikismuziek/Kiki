@@ -8,6 +8,7 @@
 
 body {
     background-color: #8eb3df !important;
+    font-family: "Open Sans", sans-serif !important;
 }
 
 a{
@@ -126,3 +127,6 @@ a:hover{
     font-size: 1.3em;
 }
 
+.wrapper{
+    overflow: auto;
+}
