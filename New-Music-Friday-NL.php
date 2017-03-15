@@ -68,8 +68,7 @@ if (isset($_SESSION['token'])) {
 
     ?>
 
-        <div class="wrapper">
-            <div class="col-md-3">
+            <div class="backBtn col-md-3">
                 <a href="javascript:history.back()">
                     <div class="options optionBackHome optionsSmall">
                         <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
@@ -77,7 +76,7 @@ if (isset($_SESSION['token'])) {
                     </div>
                 </a>
             </div>
-            <div class="col-md-3">
+            <div class="homeBtn col-md-3">
                 <a href="index.php">
                     <div class="options optionBackHome optionsSmall">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
@@ -85,7 +84,6 @@ if (isset($_SESSION['token'])) {
                     </div>
                 </a>
             </div>
-        </div>
 
     </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
