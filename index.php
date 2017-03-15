@@ -33,10 +33,10 @@ if (isset($_SESSION['token'])) {
         <img class="logo pull-right" src="img/Logo.png" alt="">
     </div>
     <div class="container">
-        <h1 id="welcome">Welkom Kiki!</h1>
+        <h1 class="bigTitle">Welkom Kiki!</h1>
         <div class="col-md-6">
             <a href="laatst-afgespeeld.php">
-                <div class="options option1">
+                <div class="options" id="option1">
                     <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
 <!--                    <img class="icon" src="img/002-replay.png" alt="">-->
                     <p id="options">Onlangs afgespeeld</p>
@@ -45,7 +45,7 @@ if (isset($_SESSION['token'])) {
         </div>
         <div class="col-md-6">
             <a href="favorieten.php">
-                <div class="options option2">
+                <div class="options" id="option2">
                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 <!--                    <img class="icon" src="img/005-star.png" alt="">-->
                     <p id="options">Favorietenlijst</p>
@@ -55,7 +55,7 @@ if (isset($_SESSION['token'])) {
 
         <div class="col-md-6">
             <a href="artiesten.php">
-                <div class="options option3">
+                <div class="options" id="option3">
                     <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
 <!--                    <img id="elvis" class="icon" src="img/Poppetje.png" alt="">-->
                     <p id="options">Artiesten</p>
@@ -65,7 +65,7 @@ if (isset($_SESSION['token'])) {
 
         <div class="col-md-6">
             <a href="nieuwe-muziek.php">
-                <div class="options option4">
+                <div class="options" id="option4">
                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 <!--                    <img class="icon" src="img/Zoek.png" alt="">-->
                     <p id="options">Nieuwe muziek</p>
@@ -77,6 +77,8 @@ if (isset($_SESSION['token'])) {
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="responsivevoice.js"></script>
+    <script type="text/javascript" src="action.js"></script>
     </body>
     </html>
 
