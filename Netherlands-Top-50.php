@@ -32,32 +32,53 @@ if (isset($_SESSION['token'])) {
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
     <body>
+    <div class="container">
+        <img class="logo pull-right" src="img/Logo.png" alt="">
+    </div>
+    <div class="container">
     <?php
     $tracks = $api->getUserPlaylistTracks('spotifycharts', '37i9dQZEVXbKCF6dqVpDkS', array('limit' => 14));
+    $playlist = $api->getUserPlaylist('spotifycharts', '37i9dQZEVXbKCF6dqVpDkS');
+    ?>
 
+        <h1 class="bigTitle"><?php echo $playlist->name; ?></h1>
+
+    <?php
     foreach ($tracks->items as $item) {
         ?>
-        <a href="nummer.php?id=<?php echo $item->track->id ?>">
-            <div class="optionsKlein optionKlein">
-                <p id="options"><?php echo $item->track->name; ?></p>
-            </div>
-        </a>
+        <div class="col-md-3">
+            <a href="nummer.php?id=<?php echo $item->track->id ?>">
+                <div class="options option optionsSmall">
+                    <p id="optionSmall"><?php echo $item->track->name; ?></p>
+                </div>
+            </a>
+        </div>
+
         <?php
     }
     ?>
-    <a href="index.php">
-        <div class="optionsKlein optionKlein">
-            <p id="options">Terug</p>
+        <div class="col-md-3">
+            <a href="index.php">
+                <div class="options optionBackHome optionsSmall">
+                    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                    <p id="optionSmall">Terug</p>
+                </div>
+            </a>
         </div>
-    </a>
-    <a href="index.php">
-        <div class="optionsKlein optionKlein">
-            <p id="options">Home</p>
+        <div class="col-md-3">
+            <a href="index.php">
+                <div class="options optionBackHome optionsSmall">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                    <p id="optionSmall">Home</p>
+                </div>
+            </a>
         </div>
-    </a>
-
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
     </body>
     </html>
 
