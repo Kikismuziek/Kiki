@@ -48,28 +48,28 @@ if (isset($_SESSION['token'])) {
         <h1 class="bigTitle">Nieuwe Muziek</h1>
         <div class="col-md-6">
             <a href="New-Music-Friday-NL.php">
-                <div class="options option">
+                <div class="options" id="option1">
                     <p id="optionsNoIcon"><?php echo $playlist->name ?></p>
                 </div>
             </a>
         </div>
         <div class="col-md-6">
             <a href="Netherlands-Top-50.php">
-                <div class="options option">
+                <div class="options" id="option2">
                     <p id="optionsNoIcon"><?php echo $playlist2->name ?></p>
                 </div>
             </a>
         </div>
         <div class="col-md-6">
             <a href="Netherlands-Viral-50.php">
-                <div class="options option">
+                <div class="options" id="option3">
                     <p id="optionsNoIcon"><?php echo $playlist3->name ?></p>
                 </div>
             </a>
         </div>
         <div class="col-md-6">
             <a href="index.php">
-                <div class="options optionBackHome">
+                <div class="options optionBackHome" id="option4">
                     <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
                     <p id="options">Terug</p>
                 </div>
@@ -79,6 +79,8 @@ if (isset($_SESSION['token'])) {
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="responsivevoice.js"></script>
+    <script type="text/javascript" src="action-new-music.js"></script>
     </body>
     </html>
 
