@@ -47,34 +47,41 @@ if (isset($_SESSION['token'])) {
         <h1 class="bigTitle"><?php echo $playlist->name; ?></h1>
 
     <?php
-    foreach ($tracks->items as $item) {
-        ?>
-        <div class="col-md-3">
-            <a href="nummer.php?id=<?php echo $item->track->id ?>">
-                <div class="options option optionsSmall">
-                    <p id="optionSmall"><?php echo $item->track->name; ?></p>
-                </div>
-            </a>
-        </div>
+    foreach(array_chunk($tracks->items, 4, true) as $array){
+        echo "<div class='wrapper'>";
+        foreach ($array as $item) {
+            ?>
+            <div class="col-md-3">
+                <a href="nummer.php?id=<?php echo $item->track->id ?>">
+                    <div class="options option optionsSmall" data-text="<?php echo $item->track->name; ?>">
+                        <p id="optionSmall"><?php echo mb_strimwidth($item->track->name, 0, 15, '...'); ?></p>
+                    </div>
+                </a>
+            </div>
 
-        <?php
+            <?php
+        }
+        echo "</div>";
     }
+
     ?>
-        <div class="col-md-3">
-            <a href="index.php">
-                <div class="options optionBackHome optionsSmall">
-                    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-                    <p id="optionSmall">Terug</p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3">
-            <a href="index.php">
-                <div class="options optionBackHome optionsSmall">
-                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                    <p id="optionSmall">Home</p>
-                </div>
-            </a>
+        <div class="wrapper">
+            <div class="col-md-3">
+                <a href="javascript:history.back()">
+                    <div class="options optionBackHome optionsSmall">
+                        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                        <p id="optionSmall">Terug</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="index.php">
+                    <div class="options optionBackHome optionsSmall">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                        <p id="optionSmall">Home</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
