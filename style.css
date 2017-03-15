@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #00A5E3;
+    background-color: #7eaddc;
 }
 
 .container {
@@ -12,23 +12,29 @@ body {
     width: 100vw;
 }
 
+.title {
+    color: #e7ea83;
+    font-size: 1.7em;
+}
+
 .options {
     float: left;
     width: 22vw;
-    height: 22vw;
+    height: 13vw;
     margin: 1vw;
     text-align: center;
     border: 1px solid black;
-    background-color: red;
+    background-color: #e7ea83;
     box-sizing: border-box;
-    color: white;
+    color: #d1232a;
     vertical-align: middle;
 }
 
 #options {
     top: 40%;
     position: relative;
-    font-size: 1.3em;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .optionsKlein {
@@ -38,9 +44,9 @@ body {
     margin: 1vw;
     text-align: center;
     border: 1px solid black;
-    background-color: red;
+    background-color: #e7ea83;
     box-sizing: border-box;
-    color: white;
+    color: #d1232a;
     vertical-align: middle;
 }
 
@@ -57,9 +63,9 @@ body {
     margin: 1vw;
     text-align: center;
     border: 1px solid black;
-    background-color: red;
+    background-color: #e7ea83;
     box-sizing: border-box;
-    color: white;
+    color: #d1232a;
     vertical-align: middle;
 }
 
