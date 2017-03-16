@@ -10,7 +10,7 @@ $(function () {
     home.appendTo(wrapper4);
 
     function countdown() {
-        document.getElementById('wrapper1').style.backgroundColor = '#d1232a';
+        document.getElementById('wrapper1').style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
         document.getElementById('wrapper1').style.color = '#e7ea83';
         document.getElementById('wrapper1').className += " active";
         var speak = document.getElementById('wrapper1').textContent;
@@ -38,7 +38,7 @@ $(function () {
                         document.getElementById("wrapper4").style.backgroundColor = 'transparant';
                         document.getElementById("wrapper4").style.color = '#e7ea83';
                     }
-                    document.getElementById('wrapper' + amountElements).style.backgroundColor = '#d1232a';
+                    document.getElementById('wrapper' + amountElements).style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
                     document.getElementById('wrapper' + amountElements).style.color = '#e7ea83';
                     document.getElementById('wrapper' + amountElements).className += " active";
                     //var speak = document.getElementById('option' + amountElements).textContent;
@@ -104,8 +104,8 @@ $(function () {
                         document.getElementById(begin).style.backgroundColor = '#d1232a';
                         document.getElementById(begin).style.color = '#e7ea83';
                         document.getElementById(begin).className += " active";
-                        var speak = document.getElementById(begin).textContent;
-                        //responsiveVoice.speak(speak, "Dutch Female");
+                        var speak = document.getElementById(begin).getAttribute("data-text").valueOf();
+                        responsiveVoice.speak(speak, "Dutch Female");
 
                         var counting = true;
                         var nospeak = false;
@@ -146,8 +146,8 @@ $(function () {
                                     } else {
                                         amountElements -= 4 ;
                                     }
-                                    //var speak = document.getElementById('option' + amountElements).textContent;
-                                    //responsiveVoice.speak(speak, "Dutch Female");
+                                    var speak = document.getElementById('option' + amountElements).getAttribute("data-text").valueOf();
+                                    responsiveVoice.speak(speak, "Dutch Female");
                                     counting = false;
                                     counting = true;
 
