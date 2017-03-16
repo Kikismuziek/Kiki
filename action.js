@@ -9,20 +9,6 @@ $(function () {
         }, 3000);
     });
 
-    console.log(idArray);
-    var randomSong = idArray[Math.floor(Math.random() * idArray.length)];
-
-
-    $(".optionPrev").click(function (e) {
-        e.preventDefault();
-        window.location = "http://localhost/Kiki/nummer.php?id=" + randomSong;
-    });
-
-    $(".optionNext").click(function (e) {
-        e.preventDefault();
-        window.location = "http://localhost/Kiki/nummer.php?id=" + randomSong;
-    });
-
     $(".optionFavorite").click(function(){
 
         console.log($(this).data('id'));
@@ -44,9 +30,6 @@ $(function () {
         }
 
     });
-
-
-
 
 });
 

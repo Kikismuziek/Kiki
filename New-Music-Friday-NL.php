@@ -43,6 +43,7 @@ if (isset($_SESSION['token'])) {
     <div class="container">
     <?php
     $count = 0;
+    $array1 = array();
     $tracks = $api->getUserPlaylistTracks('spotify_netherlands', '1EnTBEgCWiTX2YHyAzkcFn', array('limit' => 14));
     $playlist = $api->getUserPlaylist('spotify_netherlands', '1EnTBEgCWiTX2YHyAzkcFn');
     ?>
@@ -64,9 +65,11 @@ if (isset($_SESSION['token'])) {
             </div>
 
             <?php
+            array_push($array1, $item->track->id);
         }
         echo "</div>";
     }
+    $_SESSION['songs'] = $array1;
 
     ?>
 

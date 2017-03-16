@@ -59,7 +59,8 @@ $track = $api->getTrack($id);
             </a>
         </div>
         <div class="col-md-6">
-            <a href="#">
+            <a href="nummer.php?id=<?php if(isset($_SESSION['songs'])){
+    echo $_SESSION['songs'][array_rand($_SESSION['songs'])];}; ?>">
                 <div class="options optionsSong option optionPrev">
                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                     <p id="options">Vorig nummer</p>
@@ -68,7 +69,8 @@ $track = $api->getTrack($id);
 
         </div>
         <div class="col-md-6">
-            <a href="#">
+            <a href="nummer.php?id=<?php if(isset($_SESSION['songs'])){
+                echo $_SESSION['songs'][array_rand($_SESSION['songs'])];}; ?>">
                 <div class="options optionsSong option optionNext">
                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     <p id="options">Volgend nummer</p>

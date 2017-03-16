@@ -32,29 +32,51 @@ if (isset($_SESSION['token'])) {
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
     <body>
+    <div class="container">
+        <a href="index.php">
+            <img class="logo pull-right" src="img/Logo.png" alt="">
+        </a>
+    </div>
+    <div class="container">
+        <h1 class="bigTitle">
+            Artiesten
+        </h1>
     <?php
     $tracks = $api->getMyTop('artists', [
         'limit' => 5,
     ]);
 
+//    print "<pre>";
+//    print_r($tracks->items[0]->id);
+//    print "</pre>";
+
     foreach ($tracks->items as $item) {
         ?>
-        <a href="<?php echo $item->external_urls->spotify; ?>">
-            <div class="optionsMiddel optionMiddel">
-                <p id="options"><?php echo $item->name; ?></p>
-            </div>
-        </a>
+        <div class="col-md-4">
+            <a href="artiest.php?id=<?php echo $item->id; ?>">
+                <div class="options optionMiddel">
+                    <p id="options"><?php echo $item->name; ?></p>
+                </div>
+            </a>
+        </div>
         <?php
     }
     ?>
-    <a href="index.php">
-        <div class="optionsMiddel optionMiddel">
-            <p id="options">Terug</p>
+        <div class="col-md-4">
+            <a href="index.php">
+                <div class="options optionMiddel">
+                    <p id="options">Terug</p>
+                </div>
+            </a>
         </div>
-    </a>
-
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="responsivevoice.js"></script>
+    <script type="text/javascript" src="action.js"></script>
     </body>
     </html>
 

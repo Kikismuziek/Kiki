@@ -32,32 +32,58 @@ if (isset($_SESSION['token'])) {
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
     <body>
+    <div class="container">
+        <a href="index.php">
+            <img class="logo pull-right" src="img/Logo.png" alt="">
+        </a>
+    </div>
+    <div class="container">
+        <h1 class="bigTitle">
+            Onlangs Afgespeeld
+        </h1>
         <?php
+        $array1 = array();
         $tracks = $api->getMyRecentTracks(array('limit' => 14));
 
         foreach ($tracks->items as $item) {
             ?>
-            <a href="<?php echo $item->track->external_urls->spotify; ?>">
-                <div class="optionsKlein optionKlein">
-                    <p id="options"><?php echo $item->track->name; ?></p>
+            <div class="col-md-3">
+                <a href="nummer.php?id=<?php echo $item->track->id ?>">
+                    <div class="options option optionsSmall">
+                        <p id="optionSmall"><?php echo mb_strimwidth($item->track->name, 0, 15, '...'); ?></p>
+                    </div>
+                </a>
+            </div>
+            <?php
+            array_push($array1, $item->track->id);
+        }
+        $_SESSION['songs'] = $array1;
+        ?>
+        <div class="backBtn col-md-3">
+            <a href="javascript:history.back()">
+                <div class="options optionBackHome optionsSmall">
+                    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                    <p id="optionSmall">Terug</p>
                 </div>
             </a>
-            <?php
-            }
-            ?>
-        <a href="index.php">
-            <div class="optionsKlein optionKlein">
-                <p id="options">Terug</p>
-            </div>
-        </a>
-        <a href="index.php">
-            <div class="optionsKlein optionKlein">
-                <p id="options">Home</p>
-            </div>
-        </a>
+        </div>
+        <div class="homeBtn col-md-3">
+            <a href="index.php">
+                <div class="options optionBackHome optionsSmall">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                    <p id="optionSmall">Home</p>
+                </div>
+            </a>
+        </div>
+    </div>
 
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="responsivevoice.js"></script>
+        <script type="text/javascript" src="action.js"></script>
     </body>
     </html>
 
