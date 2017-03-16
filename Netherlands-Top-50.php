@@ -43,6 +43,7 @@ if (isset($_SESSION['token'])) {
     <div class="container">
     <?php
     $count = 0;
+    $number = 0;
     $array1 = array();
 
 //    $allTracks = $api->getUserPlaylistTracks('spotifycharts', '37i9dQZEVXbKCF6dqVpDkS');
@@ -60,12 +61,13 @@ if (isset($_SESSION['token'])) {
     <?php
     foreach(array_chunk($tracks->items, 4, true) as $array){
         $count++;
-        echo "<div class='wrapper wrapper$count' data-wrapperid='$count'>";
+        echo "<div class='wrapper wrapper$count' data-wrapperid='$count' id='wrapper$count'>";
         foreach ($array as $item) {
+            $number++;
             ?>
             <div class="col-md-3">
                 <a href="nummer.php?id=<?php echo $item->track->id ?>">
-                    <div class="options option optionsSmall" data-text="<?php echo $item->track->name; ?>">
+                    <div class="options option optionsSmall" href="nummer.php?id=<?php echo $item->track->id ?>" id="option<?php echo $number ?>" data-text="<?php echo $item->track->name; ?>">
                         <p id="optionSmall"><?php echo mb_strimwidth($item->track->name, 0, 15, '...'); ?></p>
                     </div>
                 </a>
@@ -76,6 +78,7 @@ if (isset($_SESSION['token'])) {
         }
         echo "</div>";
     }
+    $_SESSION['songs'] = $array1;
 
     ?>
             <div class="backBtn col-md-3">
@@ -96,9 +99,6 @@ if (isset($_SESSION['token'])) {
             </div>
     </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script type="text/javascript">
-        var idArray = <?php echo json_encode($array1); ?>;
-    </script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="responsivevoice.js"></script>
     <script type="text/javascript" src="action-playlist.js"></script>
