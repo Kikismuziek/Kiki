@@ -36,7 +36,9 @@ if (isset($_SESSION['token'])) {
     </head>
     <body>
     <div class="container">
-        <img class="logo pull-right" src="img/Logo.png" alt="">
+        <a href="index.php">
+            <img class="logo pull-right" src="img/Logo.png" alt="">
+        </a>
     </div>
     <div class="container">
     <?php

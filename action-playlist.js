@@ -9,7 +9,24 @@ $(function () {
     back.appendTo(wrapper4);
     home.appendTo(wrapper4);
 
-    setInterval(function(){
+    console.log(pausecontent);
 
-    }, 5000);
+    // console.log("test");
+
+//    nextPrevSong();
+
+
 });
+
+
+// function nextPrevSong(){
+//     $.getJSON("Netherlands-Top-50.php", function(data){
+//         readData(data);
+//     })
+// }
+//
+// function readData(data){
+//
+//     console.log(data);
+//
+// }

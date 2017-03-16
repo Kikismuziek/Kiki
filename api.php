@@ -18,4 +18,8 @@ $authorizeUrl = $session->getAuthorizeUrl(array(
 ));
 $api = new SpotifyWebAPI\SpotifyWebAPI();
 session_start();
+//if we have an access token set it
+if (isset($_SESSION['accessToken'])) {
+    $api->setAccessToken($_SESSION['accessToken']);
+}
 ?>

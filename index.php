@@ -29,8 +29,23 @@ if (isset($_SESSION['token'])) {
         <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
     <body>
+    <div class="loader-wrapper">
+        <div class="loader">
+            <img class="loaderLogo" src="img/Logo.png" alt="Logo Kiki's Music">
+        </div>
+
+
+        <div class="loader-section section-left">
+
+        </div>
+        <div class="loader-section section-right">
+
+        </div>
+    </div>
     <div class="container">
-        <img class="logo pull-right" src="img/Logo.png" alt="">
+        <a href="index.php">
+            <img class="logo pull-right" src="img/Logo.png" alt="">
+        </a>
     </div>
     <div class="container">
         <h1 class="bigTitle">Welkom Kiki!</h1>

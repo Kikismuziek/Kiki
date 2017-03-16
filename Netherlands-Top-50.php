@@ -36,11 +36,21 @@ if (isset($_SESSION['token'])) {
     </head>
     <body>
     <div class="container">
-        <img class="logo pull-right" src="img/Logo.png" alt="">
+        <a href="index.php">
+            <img class="logo pull-right" src="img/Logo.png" alt="">
+        </a>
     </div>
     <div class="container">
     <?php
     $count = 0;
+    $array1 = array();
+
+//    $allTracks = $api->getUserPlaylistTracks('spotifycharts', '37i9dQZEVXbKCF6dqVpDkS');
+//    foreach($allTracks->items as $item){
+//        array_push($array1, $item->track->id);
+//    }
+//
+
     $tracks = $api->getUserPlaylistTracks('spotifycharts', '37i9dQZEVXbKCF6dqVpDkS', array('limit' => 14));
     $playlist = $api->getUserPlaylist('spotifycharts', '37i9dQZEVXbKCF6dqVpDkS');
     ?>
@@ -62,6 +72,7 @@ if (isset($_SESSION['token'])) {
             </div>
 
             <?php
+            array_push($array1, $item->track->id);
         }
         echo "</div>";
     }
@@ -85,6 +96,9 @@ if (isset($_SESSION['token'])) {
             </div>
     </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        var idArray = <?php echo json_encode($array1); ?>;
+    </script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="responsivevoice.js"></script>
     <script type="text/javascript" src="action-playlist.js"></script>

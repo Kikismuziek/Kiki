@@ -42,7 +42,9 @@ if (isset($_SESSION['token'])) {
 
         ?>
     <div class="container">
-        <img class="logo pull-right" src="img/Logo.png" alt="">
+        <a href="index.php">
+            <img class="logo pull-right" src="img/Logo.png" alt="">
+        </a>
     </div>
     <div class="container">
         <h1 class="bigTitle">Nieuwe Muziek</h1>
